@@ -2,7 +2,7 @@
 
 @section('content')
     <a href="{{ route('admin.posts.create') }}">Crea nuovo post</a>
-    <table class="table">
+    <table class="">
         <thead>
             <tr>
                 <th scope="col">Id</th>
@@ -23,9 +23,9 @@
                         </a>
                     </td>
                     <td>{{ $elem->body }}</td>
-                    <td>
-                        <a href="{{ route('admin.posts.edit', $elem->id) }}">
-                            Edit
+                    <td class="justify-content-center">
+                        <a class="" href="{{ route('admin.posts.edit', $elem->id) }}">
+                            <i class="fa-solid fa-pen-to-square"></i>
                         </a>
 
                         <form action="{{ route('admin.posts.destroy', $elem->id)}}" method="POST">
@@ -33,7 +33,7 @@
                             @csrf
                             @method('DELETE')
                             <Button type="submit" class="btn btn-danger">
-                                Delete
+                                <i class="fa-solid fa-trash"></i>
                             </Button>
                         </form>
                     </td>
